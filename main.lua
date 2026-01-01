@@ -3587,17 +3587,18 @@ local Window = Luna:CreateWindow({
     Name = "CattStar  |  " .. executor,
     LoadingTitle = "CattoStarHub",
     LoadingSubtitle = "",
+	Subtitle = ". . . . . .",
     ConfigFolder = "CattStarConfig",
     KeySystem = false
 })
 
--- Create the main window (no key system, no forced home tab example)
-local Window = Luna:CreateWindow({
-    Name = "CattStar  |  " .. executor,
-    Subtitle = ". . . . . .",
-    ConfigFolder = "CattStarConfig",
-    KeySystem = false
-})
+-- -- Create the main window (no key system, no forced home tab example)
+-- local Window = Luna:CreateWindow({
+--     Name = "CattStar  |  " .. executor,
+--     Subtitle = ". . . . . .",
+--     ConfigFolder = "CattStarConfig",
+--     KeySystem = false
+-- })
 
 
 -- Executor Status Tab
