@@ -3592,15 +3592,6 @@ local Window = Luna:CreateWindow({
     KeySystem = false
 })
 
--- -- Create the main window (no key system, no forced home tab example)
--- local Window = Luna:CreateWindow({
---     Name = "CattStar  |  " .. executor,
---     Subtitle = ". . . . . .",
---     ConfigFolder = "CattStarConfig",
---     KeySystem = false
--- })
-
-
 -- Executor Status Tab
 local ExecutorTab = Window:CreateTab({ Name = "◇・Executor Status" })
 local InfoSection = ExecutorTab:CreateSection("◈・Information")
