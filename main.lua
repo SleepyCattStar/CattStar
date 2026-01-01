@@ -1,4 +1,10 @@
-local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/SleepyCattStar/CattStar/refs/heads/main/luna.lua"))()
+local LunaRaw = game:HttpGet("https://raw.githubusercontent.com/SleepyCattStar/CattStar/refs/heads/main/luna.lua")
+local Luna = loadstring(LunaRaw)()
+
+if not Luna then
+    warn("CRITICAL: Luna failed to load. Ensure 'return Luna' is at the bottom of your luna.lua file.")
+    return
+end
 
 local AimlockModule_Source = [===[
     local AimlockModule = {}
