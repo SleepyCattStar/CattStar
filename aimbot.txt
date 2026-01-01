@@ -1,1 +1,0 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SleepyCattStar/CattStar/refs/heads/main/MainScript_..lua"))()
