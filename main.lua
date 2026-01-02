@@ -3664,6 +3664,10 @@ FeaturesSection:CreateToggle({ Name = "・Fps Or Pings", Description = "Display 
 FeaturesSection:CreateSlider({Name = "Speed Hack", Range = {1, 100}, Increment = 1, Suffix = " Mult", CurrentValue = 1, Flag = "SpeedHack", 
 Callback = function(v) getgenv().WalkSpeedValue = v game.Players.LocalPlayer.Character:SetAttribute("SpeedMultiplier", v) end})
 
+FeaturesSection:CreateSlider({Name = "Dash Length", Range = {100, 1000}, Increment = 10, Suffix = " Mult318", CurrentValue = 100, Flag = "DashLength", 
+Callback = function(v) getgenv().DashLength = v game.Players.LocalPlayer.Character:SetAttribute("DashLength", v) end})
+
+
 FeaturesSection:CreateToggle({ Name = "・Fps Boost", Description = "Increase Fps", CurrentValue = false, Flag = "FpsBoost", Callback = function(state) StuffsModule:SetFpsBoost(state) end })
 FeaturesSection:CreateToggle({ Name = "・INF Energy", Description = "Max Energy", CurrentValue = false, Flag = "INFEnergy", Callback = function(state) StuffsModule:SetINFEnergy(state) end })
 FeaturesSection:CreateToggle({ Name = "・Walk on Water", Description = "Travel in Water", CurrentValue = false, Flag = "WalkWater", Callback = function(state) StuffsModule:SetWalkWater(state) end })
@@ -3695,7 +3699,7 @@ SettingsSection:CreateButton({ Name = "Rejoin Server", Description = "Rejoin you
 
 SettingsSection:CreateDropdown({ Name = "・Global Text Font", Description = "Change font for all text", Options = {"Arcade","Cartoon","SciFi","Fantasy","Antique","Garamond","RobotoMono","FredokaOne","LuckiestGuy","PermanentMarker","SpecialElite","Oswald","Nunito"}, CurrentOption = "Arcade", Flag = "GlobalFont", Callback = function(selected) local fontEnum = Enum.Font[selected] if fontEnum then ESPModule:SetGlobalFont(fontEnum) end end })
 
-SettingsSection:CreateDropdown({ Name = "・RTX Graphics Mode", Description = "Choose between Autumn or Summer or Spring or Winter", Options = {"Autumn","Summer","Spring","Winter"}, CurrentOption = "Autumn", Flag = "RTXMode", Callback = function(selected) ESPModule:SetRTXMode(selected) end })
+-- SettingsSection:CreateDropdown({ Name = "・RTX Graphics Mode", Description = "Choose between Autumn or Summer or Spring or Winter", Options = {"Autumn","Summer","Spring","Winter"}, CurrentOption = "Autumn", Flag = "RTXMode", Callback = function(selected) ESPModule:SetRTXMode(selected) end })
 
 -- Keybinds
 toggleButton.MouseButton1Click:Connect(function() Window:Toggle() end)
