@@ -3661,8 +3661,8 @@ FeaturesSection:CreateToggle({ Name = "・Fps Or Pings", Description = "Display 
 
 -- FeaturesSection:CreateInput({ Name = "Speed Hack", Description = "WalkSpeedValue", PlaceholderText = "Enter speed", CurrentValue = "", Flag = "SpeedHack", Callback = function(val) local num = tonumber(val) if num then getgenv().WalkSpeedValue = num UiSettingsModule:SetWalkSpeed(num) end end })
 
-FeaturesSection:CreateSlider({Name = "Speed Hack", Range = {16, 100}, Increment = 1, Suffix = " Speed", CurrentValue = 16, Flag = "SpeedHack", 
-Callback = function(v) getgenv().WalkSpeedValue = v pcall(function() UiSettingsModule:SetWalkSpeed(v) end) end})
+FeaturesSection:CreateSlider({Name = "Speed Hack", Range = {1, 100}, Increment = 1, Suffix = " Mult", CurrentValue = 1, Flag = "SpeedHack", 
+Callback = function(v) getgenv().WalkSpeedValue = v game.Players.LocalPlayer.Character:SetAttribute("SpeedMultiplier", v) end})
 
 FeaturesSection:CreateToggle({ Name = "・Fps Boost", Description = "Increase Fps", CurrentValue = false, Flag = "FpsBoost", Callback = function(state) StuffsModule:SetFpsBoost(state) end })
 FeaturesSection:CreateToggle({ Name = "・INF Energy", Description = "Max Energy", CurrentValue = false, Flag = "INFEnergy", Callback = function(state) StuffsModule:SetINFEnergy(state) end })
