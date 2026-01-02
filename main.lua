@@ -3670,7 +3670,11 @@ FeaturesSection:CreateToggle({ Name = "・Walk on Water", Description = "Travel 
 FeaturesSection:CreateToggle({ Name = "・Fast Attack", Description = "Fast Attack", CurrentValue = false, Flag = "FastAttack", Callback = function(state) StuffsModule:SetFastAttack(state) end })
 FeaturesSection:CreateToggle({ Name = "・AntiAfk", Description = "AntiAfk only on before you off", CurrentValue = false, Flag = "AntiAFK", Callback = function(state) ESPModule:SetAntiAfk(state) end })
 
-FeaturesSection:CreateInput({ Name = "Jump Power", Description = "JumpValue", PlaceholderText = "Enter value", CurrentValue = "", Flag = "JumpPower", Callback = function(val) local num = tonumber(val) if num then getgenv().JumpValue = num local char = Players.LocalPlayer.Character if char and char:FindFirstChild("Humanoid") then char.Humanoid.JumpPower = num end end end })
+-- FeaturesSection:CreateInput({ Name = "Jump Power", Description = "JumpValue", PlaceholderText = "Enter value", CurrentValue = "", Flag = "JumpPower", Callback = function(val) local num = tonumber(val) if num then getgenv().JumpValue = num local char = Players.LocalPlayer.Character if char and char:FindFirstChild("Humanoid") then char.Humanoid.JumpPower = num end end end })
+
+FeaturesSection:CreateSlider({Name = "Jump Power", Range = {10, 500}, Increment = 1, Suffix = " Power", CurrentValue = 14, Flag = "JumpPower",
+Callback = function(v) getgenv().JumpValue = v local hum = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+if hum then hum.UseJumpPower = true pcall(function() hum.JumpPower = v end) end end})
 
 FeaturesSection:CreateToggle({ Name = "・Auto V4", Description = "Auto V4 Transform", CurrentValue = false, Flag = "AutoV4", Callback = function(state) UiSettingsModule:SetV4(state) end })
 FeaturesSection:CreateToggle({ Name = "・Spawned Fruit Check", Description = "Check Fruit Spawned", CurrentValue = false, Flag = "FruitCheck", Callback = function(state) UiSettingsModule:SetFruitCheck(state) end })
